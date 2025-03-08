@@ -5,13 +5,14 @@ public class Latte extends Coffee {
     String syrupFlavor;
 
     // TODO 12: declare that the constructors throws a InvalidTypeException
-    public Latte(String name, String roast, double price, String milkType, String syrupFlavor) throws InvalidTypeException {
+    public Latte(String name, String roast, double price, String milkType, String syrupFlavor) throws IllegalArgumentException {
         super(name, roast, price);
 
         // TODO 11: check whether a valid milkType is selected, if not throw an exception with a message
-        if (!milkType.equals("whole") && !milkType.equals("oat") && !milkType.equals("almond")) {
-            throw new InvalidTypeException("please select a valid milk type!");
+        if (!("whole".equals(milkType)) && !("skim".equals(milkType)) && !("almond".equals(milkType)) && !("oat".equals(milkType))) {
+            throw new IllegalArgumentException("please select a valid milk type!");
         }
+
         this.milkType = milkType;
         this.syrupFlavor = syrupFlavor;
     }

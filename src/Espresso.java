@@ -10,6 +10,7 @@ public class Espresso extends Coffee {
         if (numberOfShots <= 0) {
             throw new ArithmeticException("please select at least 1 serving!");
         }
+
         this.numberOfShots = numberOfShots;
     }
 

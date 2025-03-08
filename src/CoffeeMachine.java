@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CoffeeMachine {
 
-    public static void main(String[] args) throws InvalidTypeException {
+    public static void main(String[] args) {
 
         // Create a Scanner object to read input
         Scanner keyboard = new Scanner(System.in);
@@ -86,8 +86,11 @@ public class CoffeeMachine {
                         System.out.print("Which flavor would you like? (vanilla, caramel, hazelnut): ");
                         syrupFlavor = keyboard.next();
                     }
+
+                    // TODO 14: declare the myLatte object before the try block and set it to null.
                     Latte myLatte = null;
 
+                    // TODO 13: surround the myLatte object with a try-catch block to handle the IllegalArgumentException.
                     try {
                         myLatte = new Latte(latteName, latteRoast, lattePrice, milkType, syrupFlavor);
                     } catch (IllegalArgumentException e) {
@@ -98,6 +101,7 @@ public class CoffeeMachine {
                     } finally { // TODO 16: add a finally block, and initialize the myLatte object again
                         myLatte = new Latte(latteName, latteRoast, lattePrice, milkType, syrupFlavor);
                     }
+
                     myLatte.grindBeans();
 
                     myLatte.brewCoffee();
